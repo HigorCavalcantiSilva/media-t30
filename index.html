@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Disponibilidade do Hospital</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <style>
+            body{
+                background-color: #f2f2f2;
+                font-family: helvetica;
+            }
+
+            h2 {
+                color: white;
+            }
+
+            .header {
+                margin-left: 50%;
+                transform: translate(-50%);
+                background-color: turquoise;
+                padding-top: 20px;
+                border-radius: 10px;
+                height: 200px;
+                width: 350px;
+                text-align: center;
+            }
+
+            .campos {
+                margin-left: 50%;
+                transform: translate(-35%);
+            }
+
+            h5 {
+                color: turquoise;
+                font-size: 10px;
+            }
+
+            h5.lbl {
+                color: turquoise;
+                font-size: 12px;
+                text-align: center;
+            }
+
+            img {
+                width: 60px;
+            }
+
+            div.campo {
+                display: inline;
+                float: left;
+                margin-left: 10px;
+                text-align: center;
+            }
+
+            button {
+                border-radius: 30px;
+                background-color: turquoise;
+                color: white;
+                font-size: 10px;
+                width: 100px;
+                height: 30px;
+                margin-left: 50%;
+                transform: translate(-50%);
+                outline: none;
+            }
+
+            .res {
+                background-color: gray;
+                width: 200px;
+                border-radius: 5px;
+                height: 50px;
+                text-align: center;
+                padding-top: 9px;
+                color: white;
+                margin-left: 50%;
+                transform: translate(-50%);
+            }
+
+            #resultado {
+                font-size: 15px;
+            }
+        </style>
+        <script>
+
+            function calcular(){
+
+                j = parseInt(jovens.value);
+                a = parseInt(adultos.value);
+                i = parseInt(idosos.value);
+
+                s = j + a + i;
+
+                if(s/3 <= 5){
+                    resultado.innerText = "Temos Vagas"
+                } else {
+                    resultado.innerText = "Não Temos Vagas"
+                }
+
+            }
+
+        </script>
+    </head>
+    <body class="container">
+        <div class="header">
+            <img src="prototipo/icone-hospital.png" alt="Imagem Indisponível">
+            <h2>DISPONIBILIDADE DE LEITOS HOSPITAL</h2>
+        </div>
+        <div>
+            <h5 class="lbl">DIGITE A QUANTIDADE</h5>
+        </div>
+        <div class="campos">
+            <div class="campo">
+                <input class="form-control" style="width: 70px;height: 70px;font-size: 20px;text-align: center;color: turquoise;" type="number" id="jovens">
+                <h5>Jovens</h5>
+            </div>
+            <div class="campo">
+                <input class="form-control" style="width: 70px;height: 70px;font-size: 20px;text-align: center;color: turquoise;" type="number" id="adultos">
+                <h5>Adultos</h5>
+            </div>
+            <div class="campo">
+                <input class="form-control" style="width: 70px;height: 70px;font-size: 20px;text-align: center;color: turquoise;" type="number" id="idosos">
+                <h5>Idosos</h5>
+            </div>
+        </div>
+        <div>
+            <button onclick="calcular()">Ver Resultado</button>
+        </div>
+        <br>
+        <div class="res">
+            <h4 id="resultado"></h4>
+        </div>
+        <br><br>
+    </body>
+</html>
